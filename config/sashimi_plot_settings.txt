@@ -1,0 +1,80 @@
+[data]
+# directory where BAM files are
+bam_prefix = /data/DIV5/SASC/project-051-rnaveer/analysis/runs/
+# directory where MISO output is
+miso_prefix = /data/DIV5/SASC/project-051-rnaveer/analysis/runs/all_forpaper/
+
+additional_tracks = [
+    "/data/DIV5/SASC/project-051-rnaveer/analysis/deps/Parclip.bed",
+    "/data/DIV5/SASC/project-051-rnaveer/analysis/deps/actaa.bed"]
+
+
+bam_files = [
+    "mcd14_pat_ls034_hg19.ih1.rd1.xpe.yc.tophat.map.trk.bam",
+    "mcd14_sib_ls035_hg19.ih1.rd1.xpe.yc.tophat.map.trk.bam",
+    "mphag_pat_ls036_hg19.ih1.rd1.xpe.yc.tophat.map.trk.bam",
+    "mphag_sib_ls037_hg19.ih1.rd1.xpe.yc.tophat.map.trk.bam"]
+
+miso_files = [
+    "mcd14_pat",
+    "mcd14_sib",
+    "mphag_pat",
+    "mphag_sib"]
+
+[plotting]
+# Dimensions of figure to be plotted (in inches)
+fig_width = 11.5
+fig_height = 8
+# Factor to scale down introns and exons by
+intron_scale = 30
+exon_scale = 4
+# Whether to use a log scale or not when plotting
+logged = False
+font_size = 4
+
+# Max y-axis
+#ymax = 150
+
+# Whether to plot posterior distributions inferred by MISO
+show_posteriors = True
+
+# Whether to show posterior distributions as bar summaries
+bar_posteriors = True
+
+# Whether to plot the number of reads in each junction
+number_junctions = True
+
+resolution = .5
+posterior_bins = 40
+gene_posterior_ratio = 5
+
+## Sample lables
+sample_labels = [
+    "mcd14_pat",
+    "mcd14_sib",
+    "mphag_pat",
+    "mphag_sib"]
+
+# List of colors for read denisites of each sample
+# Sample design config
+colors = [
+    "#FF8800",
+    "#FF8800",
+    "#0050EF",
+    "#0050EF"]
+
+# Number of mapped reads in each sample
+# (Used to normalize the read density for RPKM calculation)
+coverages = [
+    54328766,
+    43599204,
+    48312976,
+    41309278]
+
+# Bar color for Bayes factor distribution
+# plots (--plot-bf-dist)
+# Paint them blue
+bar_color = "b"
+
+# Bayes factors thresholds to use for --plot-bf-dist
+bf_thresholds = [0, 1, 2, 5, 10, 20]
